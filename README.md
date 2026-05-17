@@ -30,10 +30,9 @@ Ce prototype a été développé pour être léger, rapide et exécutable sans s
 ```text
 /equirame-demo
 │
-├── index.html       # La page principale contenant la structure de l'interface
-├── style.css        # La feuille de style gérant le design et les animations
-├── script.js        # Le moteur logique (simulation, calculs, recommandations)
-├── votre-logo.png   # Le logo affiché dans l'interface (à ajouter)
-└── favicon.png      # L'icône de l'onglet du navigateur (à ajouter)
+├── index.html       
+├── style.css        
+├── script.js        
+├──img
 
 
