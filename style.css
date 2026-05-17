@@ -31,8 +31,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(250,158,181,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(250,158,181,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(65,167,150,0.03) 5px, transparent 1px),
+    linear-gradient(90deg, rgba(65,167,150,0.03) 5px, transparent 1px);
   background-size: 40px 40px;
   z-index: 0;
   pointer-events: none;
@@ -67,7 +67,7 @@ body::after {
   justify-content: space-between;
   margin-bottom: 32px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(250,158,181,0.15);
+  border-bottom: 2px solid rgba(65,167,150);
 }
 
 .brand {
@@ -78,7 +78,7 @@ body::after {
 
 /* Style pour l'image de ton logo */
 .brand-logo-img {
-  height: 52px;
+  height: 90px;
   width: auto;
   object-fit: contain;
 }
@@ -88,10 +88,7 @@ body::after {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 2px;
-  background: linear-gradient(135deg, #fff 40%, var(--l7));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #41A796; /* Ton bleu-vert en couleur unie */
 }
 
 .brand-text p {
@@ -104,8 +101,8 @@ body::after {
 
 /* ── STATION SELECTOR ── */
 .selector-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(65,167,150,0.1);
+  border: 1px solid rgba(65,167,150,0.15);
   border-radius: 16px;
   padding: 20px 24px;
   margin-bottom: 24px;
@@ -167,14 +164,15 @@ select {
   flex: 1;
   min-width: 160px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23fa9eb5' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  /* La flèche turquoise est ici 👇 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2341A796' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 32px;
   transition: border-color 0.2s;
 }
 
-select:focus { outline: none; border-color: rgba(250,158,181,0.4); }
+select:focus { outline: none; border-color: rgba(65, 167, 150, 0.4); }
 select option { background: #1a1a2e; color: #fff; }
 
 .dir-label {
@@ -187,7 +185,7 @@ select option { background: #1a1a2e; color: #fff; }
 /* ── RATP PANEL ── */
 .ratp-panel {
   background: #000;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #41A796;
   border-radius: 10px;
   padding: 0;
   margin-bottom: 24px;
@@ -436,8 +434,8 @@ select option { background: #1a1a2e; color: #fff; }
 
 /* ── RECOMMENDATION ── */
 .recommendation {
-  background: rgba(250,158,181,0.06);
-  border: 1px solid rgba(250,158,181,0.15);
+  background: rgba(65,167,150,0.1);
+  border: 1px solid rgba(65,167,150,0.15);
   border-radius: 12px;
   padding: 16px 20px;
   margin-bottom: 24px;
@@ -455,7 +453,7 @@ select option { background: #1a1a2e; color: #fff; }
   font-family: 'Rajdhani', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--l7);
+  color: #41A796;
   margin-bottom: 2px;
   letter-spacing: 0.5px;
 }
@@ -475,8 +473,8 @@ select option { background: #1a1a2e; color: #fff; }
 }
 
 .btn {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(65,167,150,0.1);
+  border: 1px solid rgba(65,167,150,0.15);
   color: rgba(255,255,255,0.7);
   padding: 9px 18px;
   border-radius: 8px;
@@ -495,22 +493,22 @@ select option { background: #1a1a2e; color: #fff; }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--l7), var(--l7-deeper));
+  background: #41A796; /* Mets le code HEX de ta couleur ici */
   border: none;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(250,158,181,0.25);
+  box-shadow: 0 4px 16px rgba(0, 85, 164, 0.25); /* Remplace par le RGB de ta couleur */
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #fbaec5, var(--l7-dark));
-  box-shadow: 0 4px 24px rgba(250,158,181,0.4);
+  background: #248797; /* Une version un peu plus foncée pour le survol */
+  box-shadow: 0 4px 24px rgba(0, 85, 164, 0.4);
 }
 
 /* ── FOOTER & LEGEND ── */
 .site-footer {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 2px solid rgba(65,167,150, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -522,10 +520,10 @@ select option { background: #1a1a2e; color: #fff; }
   gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
-  background: var(--glass-bg);
+  background: rgba(65,167,150,0.1);
   padding: 12px 24px;
   border-radius: 30px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(65,167,150,0.15);
 }
 
 .legend-item {
@@ -561,7 +559,7 @@ select option { background: #1a1a2e; color: #fff; }
 }
 
 .footer-links a:hover {
-  color: var(--l7);
+  color: #41A796;
 }
 
 .footer-links p {
