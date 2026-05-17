@@ -2,7 +2,7 @@
 
 **Répartir intelligemment les voyageurs dans les rames du métro afin de réduire l’entassement, améliorer le confort et diminuer le temps de stationnement.**
 
-![Aperçu du projet](favicon.png) ## 💡 Notre Raison d'être
+## 💡 Notre Raison d'être
 Rendre les transports en commun plus efficaces, plus sûrs et plus agréables, sans travaux lourds ni transformation du réseau. 
 
 Équirame permet de fluidifier les flux directement sur le quai, **avant l’arrivée de la rame**, grâce à un guidage lumineux et à un affichage dynamique basé sur des capteurs d’occupation en temps réel.
