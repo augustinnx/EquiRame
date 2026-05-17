@@ -5,27 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EquiRame</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
 
-  <!-- Header -->
   <div class="header">
     <div class="brand">
-      <div class="brand-logo">ER</div>
+      <img src="votre-logo.png" alt="Logo EquiRame" class="brand-logo-img">
       <div class="brand-text">
         <h1>EQUIRAME</h1>
         <p>Optimisation du flux passagers</p>
       </div>
     </div>
-    <div class="header-badge">
-      <div class="dot-live"></div>
-      TEMPS RÉEL
-    </div>
   </div>
 
-  <!-- Station Selector -->
   <div class="selector-card">
     <div class="selector-label">Sélection du trajet</div>
     <div class="selector-row">
@@ -34,12 +28,44 @@
         Ligne 7
       </div>
       <select id="station-select" onchange="updateAll()">
-        <option value="chatelet">Châtelet</option>
-        <option value="pyramides">Pyramides</option>
-        <option value="opera">Opéra</option>
-        <option value="chaussee">Chaussée d'Antin</option>
-        <option value="cadet">Cadet</option>
+        <option value="courneuve">La Courneuve – 8 Mai 1945</option>
+        <option value="fort_aub">Fort d'Aubervilliers</option>
+        <option value="aubervilliers">Aubervilliers – Pantin – Quatre Chemins</option>
+        <option value="villette">Porte de la Villette</option>
+        <option value="corentin">Corentin Cariou</option>
+        <option value="crimee">Crimée</option>
+        <option value="riquet">Riquet</option>
+        <option value="stalingrad">Stalingrad</option>
+        <option value="louis_blanc">Louis Blanc</option>
+        <option value="chateau">Château-Landon</option>
+        <option value="gare_est">Gare de l'Est</option>
         <option value="poissonniere">Poissonnière</option>
+        <option value="cadet">Cadet</option>
+        <option value="peletier">Le Peletier</option>
+        <option value="chaussee">Chaussée d'Antin – La Fayette</option>
+        <option value="opera">Opéra</option>
+        <option value="pyramides">Pyramides</option>
+        <option value="palais">Palais Royal – Musée du Louvre</option>
+        <option value="pont_neuf">Pont-Neuf</option>
+        <option value="chatelet" selected>Châtelet</option>
+        <option value="pont_marie">Pont Marie</option>
+        <option value="sully">Sully – Morland</option>
+        <option value="jussieu">Jussieu</option>
+        <option value="monge">Place Monge</option>
+        <option value="censier">Censier – Daubenton</option>
+        <option value="gobelins">Les Gobelins</option>
+        <option value="italie">Place d'Italie</option>
+        <option value="tolbiac">Tolbiac</option>
+        <option value="maison_blanche">Maison Blanche</option>
+        <option value="kremlin">Le Kremlin-Bicêtre</option>
+        <option value="leo_lagrange">Villejuif – Léo Lagrange</option>
+        <option value="paul_vaillant">Villejuif – Paul Vaillant-Couturier</option>
+        <option value="aragon">Villejuif – Louis Aragon</option>
+        <option value="pte_italie">Porte d'Italie</option>
+        <option value="pte_choisy">Porte de Choisy</option>
+        <option value="pte_ivry">Porte d'Ivry</option>
+        <option value="marie_curie">Pierre et Marie Curie</option>
+        <option value="ivry">Mairie d'Ivry</option>
       </select>
       <div class="dir-label">→ Direction</div>
       <select id="direction-select" onchange="updateAll()">
@@ -50,7 +76,6 @@
     </div>
   </div>
 
-  <!-- RATP-Style Panel -->
   <div class="ratp-panel">
     <div class="ratp-header">
       <div class="ratp-line-badge">7</div>
@@ -74,7 +99,6 @@
 
       <div class="ratp-separator"></div>
 
-      <!-- Wagon visualizer inside panel (like the image) -->
       <div style="grid-column:1/-1;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;">
@@ -88,19 +112,12 @@
             <div class="train-headlight"></div>
           </div>
           <div class="wagons" id="wagons">
-            <!-- Filled by JS -->
-          </div>
-        </div>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot green"></div>&lt;30% – Libre</div>
-          <div class="legend-item"><div class="legend-dot orange"></div>30–70% – Moyen</div>
-          <div class="legend-item"><div class="legend-dot red"></div>&gt;70% – Saturé</div>
+            </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Recommendation -->
   <div class="recommendation" id="recommendation">
     <div class="rec-icon">🚶</div>
     <div class="rec-text">
@@ -109,30 +126,27 @@
     </div>
   </div>
 
-  <!-- Controls -->
   <div class="controls">
     <button class="btn btn-primary" onclick="refreshData()">↻ Actualiser</button>
     <button class="btn" onclick="simulateRush()">📈 Simuler heure de pointe</button>
     <button class="btn" onclick="simulateLow()">📉 Simuler heure creuse</button>
   </div>
 
-  <!-- Stats -->
-  <div class="stats-row">
-    <div class="stat-card highlight">
-      <div class="stat-value" id="stat-avg">--</div>
-      <div class="stat-label">Occupation moyenne</div>
+  <footer class="site-footer">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot green"></div>&lt;30% – Libre</div>
+      <div class="legend-item"><div class="legend-dot orange"></div>30–70% – Moyen</div>
+      <div class="legend-item"><div class="legend-dot red"></div>&gt;70% – Saturé</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-value" id="stat-best">--</div>
-      <div class="stat-label">Meilleure rame</div>
+    <div class="footer-links">
+      <a href="#">Mentions Légales</a>
+      <a href="#">Contact</a>
+      <p>© 2024 Projet EquiRame - Tous droits réservés.</p>
     </div>
-    <div class="stat-card">
-      <div class="stat-value" id="stat-next">--</div>
-      <div class="stat-label">Prochain train</div>
-    </div>
-  </div>
+  </footer>
 
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
